@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://to72onwt27mo"]
+[gd_scene load_steps=7 format=3 uid="uid://to72onwt27mo"]
 
 [ext_resource type="Texture2D" uid="uid://iunfhkrd0tb8" path="res://ASSETS/Character Sprites/Girl Protag.png" id="1_q13ma"]
+[ext_resource type="Script" path="res://main_protag.gd" id="2_oscid"]
 
 [sub_resource type="Animation" id="Animation_3fqp8"]
 resource_name = "walk_right"
@@ -58,6 +59,7 @@ _data = {
 texture = ExtResource("1_q13ma")
 hframes = 3
 frame = 1
+script = ExtResource("2_oscid")
 
 [node name="ProtagAnimation" type="AnimationPlayer" parent="."]
 libraries = {
