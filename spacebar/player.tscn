@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://upa6usuyoanh"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_d8hpe"]
+[ext_resource type="Texture2D" uid="uid://iunfhkrd0tb8" path="res://ASSETS/Character Sprites/Girl Protag.png" id="1_i8gxq"]
+
+[sub_resource type="GDScript" id="GDScript_eyhvn"]
+script/source = "extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	position = Vector2(100, 500)
+	
+
+func _process(delta):
+	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	print(direction)
+	if Input.is_action_just_pressed(\"move_right\"):
+		position =+ Vector2(1,0) * 50 * delta
+	
+"
+
+[sub_resource type="Animation" id="Animation_b12vr"]
+resource_name = "walk_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_mvjxp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_bi6qg"]
+resource_name = "walk_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrjak"]
+_data = {
+"RESET": SubResource("Animation_mvjxp"),
+"walk_right": SubResource("Animation_b12vr"),
+"walk_up": SubResource("Animation_bi6qg")
+}
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_d8hpe")
+
+[node name="Protag" type="Sprite2D" parent="."]
+texture = ExtResource("1_i8gxq")
+hframes = 3
+frame = 1
+script = SubResource("GDScript_eyhvn")
+
+[node name="Protag Animation" type="AnimationPlayer" parent="Protag"]
+libraries = {
+"": SubResource("AnimationLibrary_wrjak")
+}
