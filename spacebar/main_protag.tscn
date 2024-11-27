@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://to72onwt27mo"]
+
+[ext_resource type="Texture2D" uid="uid://iunfhkrd0tb8" path="res://ASSETS/Character Sprites/Girl Protag.png" id="1_q13ma"]
+
+[node name="mainProtag" type="Sprite2D"]
+texture = ExtResource("1_q13ma")
+hframes = 3
+frame = 2
