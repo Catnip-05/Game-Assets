@@ -6,6 +6,7 @@
 [sub_resource type="GDScript" id="GDScript_eyhvn"]
 script/source = "extends Node2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = Vector2(100, 500)
@@ -14,8 +15,12 @@ func _ready():
 func _process(delta):
 	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
 	print(direction)
-	if Input.is_action_just_pressed(\"move_right\"):
+	if Input.is_action_just_pressed(\"walk_right\"):
 		position =+ Vector2(1,0) * 50 * delta
+	else:
+		Input.is_action_just_pressed(\"walk_up\")
+		#$\"Protag Animation\".set_frame(2)
+		
 	
 "
 
@@ -75,6 +80,7 @@ _data = {
 script = ExtResource("1_d8hpe")
 
 [node name="Protag" type="Sprite2D" parent="."]
+position = Vector2(137, 110)
 texture = ExtResource("1_i8gxq")
 hframes = 3
 frame = 1
