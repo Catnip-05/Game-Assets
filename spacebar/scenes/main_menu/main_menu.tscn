@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbc76akyhiwkc"]
 
-[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_dqqjj"]
-[ext_resource type="Texture2D" uid="uid://6vnd8n02a8sb" path="res://desert-backgorund.png" id="1_t8wty"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_dqqjj"]
+[ext_resource type="Texture2D" uid="uid://6vnd8n02a8sb" path="res://ASSETS/UI Sprites/desert-backgorund.png" id="1_t8wty"]
 
 [sub_resource type="SystemFont" id="SystemFont_hh7d0"]
 font_names = PackedStringArray("Impact")
