@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbc76akyhiwkc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_dqqjj"]
-[ext_resource type="Texture2D" uid="uid://6vnd8n02a8sb" path="res://ASSETS/UI Sprites/desert-backgorund.png" id="1_t8wty"]
+[ext_resource type="Texture2D" path="res://ASSETS/UI Sprites/desert-backgorund.png" id="1_t8wty"]
 
 [sub_resource type="SystemFont" id="SystemFont_hh7d0"]
 font_names = PackedStringArray("Impact")
@@ -47,9 +47,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 6
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 6
 theme_override_fonts/font = SubResource("SystemFont_hh7d0")
 theme_override_font_sizes/font_size = 48
 text = "Abandoned By A Hero
