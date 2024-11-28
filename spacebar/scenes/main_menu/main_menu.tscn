@@ -5,9 +5,11 @@
 
 [sub_resource type="SystemFont" id="SystemFont_hh7d0"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_ihkd7"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -47,9 +49,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 6
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/outline_size = 24
-theme_override_constants/line_spacing = 6
 theme_override_fonts/font = SubResource("SystemFont_hh7d0")
 theme_override_font_sizes/font_size = 48
 text = "Abandoned By A Hero
