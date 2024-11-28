@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbc76akyhiwkc"]
+[gd_scene load_steps=5 format=3 uid="uid://cbc76akyhiwkc"]
 
-[ext_resource type="Texture2D" uid="uid://6vnd8n02a8sb" path="res://desert-backgorund.png" id="1_3ca6s"]
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_dqqjj"]
+[ext_resource type="Texture2D" uid="uid://6vnd8n02a8sb" path="res://desert-backgorund.png" id="1_t8wty"]
 
 [sub_resource type="SystemFont" id="SystemFont_hh7d0"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_ihkd7"]
 font_names = PackedStringArray("Impact")
 
 [node name="Main Menu" type="Control"]
@@ -12,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dqqjj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3ca6s")
+texture = ExtResource("1_t8wty")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 0
@@ -32,6 +37,7 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(0, 640)
 layout_mode = 2
 theme_override_constants/separation = 120
 
@@ -53,16 +59,28 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 100
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Separator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Start Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ihkd7")
+theme_override_font_sizes/font_size = 38
 text = "PLAY"
+
+[node name="Exit Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ihkd7")
+theme_override_font_sizes/font_size = 38
+text = "EXIT"

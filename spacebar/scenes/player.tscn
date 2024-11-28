@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://upa6usuyoanh"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_d8hpe"]
-[ext_resource type="Texture2D" uid="uid://iunfhkrd0tb8" path="res://ASSETS/Character Sprites/Girl Protag.png" id="1_i8gxq"]
+[ext_resource type="Script" path="res://player.gd" id="1_vcrb1"]
+[ext_resource type="Texture2D" uid="uid://iunfhkrd0tb8" path="res://ASSETS/Character Sprites/Girl Protag.png" id="2_22rny"]
 
 [sub_resource type="GDScript" id="GDScript_eyhvn"]
 script/source = "extends Node2D
@@ -24,21 +24,6 @@ func _process(delta):
 	
 "
 
-[sub_resource type="Animation" id="Animation_b12vr"]
-resource_name = "walk_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="Animation" id="Animation_mvjxp"]
 length = 0.001
 tracks/0/type = "value"
@@ -49,6 +34,21 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_b12vr"]
+resource_name = "walk_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -77,11 +77,11 @@ _data = {
 }
 
 [node name="Player" type="Node2D"]
-script = ExtResource("1_d8hpe")
+script = ExtResource("1_vcrb1")
 
 [node name="Protag" type="Sprite2D" parent="."]
 position = Vector2(137, 110)
-texture = ExtResource("1_i8gxq")
+texture = ExtResource("2_22rny")
 hframes = 3
 frame = 1
 script = SubResource("GDScript_eyhvn")
