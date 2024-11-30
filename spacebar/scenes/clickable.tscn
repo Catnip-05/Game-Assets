@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dku3fqcxb73ih"]
+
+[ext_resource type="Texture2D" uid="uid://bd3h2hhapv5k6" path="res://ASSETS/UI Sprites/Button Play.png" id="1_rghkf"]
+[ext_resource type="Script" path="res://scripts/clickable.gd" id="1_ujjnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24yow"]
+size = Vector2(76, 53)
+
+[node name="Clickable" type="Area2D"]
+script = ExtResource("1_ujjnw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(300.5, 177)
+scale = Vector2(3.58824, 2.75)
+texture = ExtResource("1_rghkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(300, 176.5)
+shape = SubResource("RectangleShape2D_24yow")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is a Puzzle"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
