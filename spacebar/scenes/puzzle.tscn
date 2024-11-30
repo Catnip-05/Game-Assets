@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwnjt3magvsra"]
+[gd_scene load_steps=4 format=3 uid="uid://dwnjt3magvsra"]
 
 [ext_resource type="Script" path="res://scripts/puzzle.gd" id="1_mben2"]
 [ext_resource type="Texture2D" uid="uid://cq1ai7d4gdghq" path="res://ASSETS/UI Sprites/ButtonCheck.png" id="2_0i01s"]
@@ -6,29 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnjsm"]
 size = Vector2(146, 125)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm7hs"]
-size = Vector2(372, 649)
-
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_mben2")
 
-[node name="DraggableObject" type="Node2D" parent="."]
-
-[node name="Area" type="Area2D" parent="DraggableObject"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableObject/Area"]
-position = Vector2(350, 160)
-shape = SubResource("RectangleShape2D_bnjsm")
-
-[node name="Check" type="Sprite2D" parent="DraggableObject"]
+[node name="Check" type="Sprite2D" parent="."]
 position = Vector2(351, 164)
 scale = Vector2(7, 6.4375)
 texture = ExtResource("2_0i01s")
 
-[node name="DropArea" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropArea"]
-position = Vector2(961, 324.5)
-shape = SubResource("RectangleShape2D_xm7hs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(350, 160)
+shape = SubResource("RectangleShape2D_bnjsm")
 
-[connection signal="input_event" from="DraggableObject/Area" to="." method="_on_cross_area_input_event"]
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
+[connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Area" to="." method="_on_area_mouse_exited"]
