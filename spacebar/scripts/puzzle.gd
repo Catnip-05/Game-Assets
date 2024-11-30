@@ -2,6 +2,8 @@ extends Node2D
 
 var selected = false
 var offset = Vector2()
+var drop_area : Area2D
+var snap_position : Vector2 = Vector2(500, 500)
 
 func _ready() -> void:
 	pass
