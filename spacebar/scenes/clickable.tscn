@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dku3fqcxb73ih"]
+
+[ext_resource type="Texture2D" uid="uid://bd3h2hhapv5k6" path="res://ASSETS/UI Sprites/Button Play.png" id="1_rghkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24yow"]
+
+[node name="Clickable" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 63)
+texture = ExtResource("1_rghkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(104, 63)
+shape = SubResource("RectangleShape2D_24yow")
