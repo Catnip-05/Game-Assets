@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhlu6hafe077u"]
+[gd_scene load_steps=10 format=3 uid="uid://dhlu6hafe077u"]
 
 [ext_resource type="Texture2D" uid="uid://bl08lmetuf6c4" path="res://ASSETS/UI Sprites/Flat_Frame1.png" id="1_d56vg"]
 [ext_resource type="Texture2D" uid="uid://ckte8jrwsbvpx" path="res://ASSETS/UI Sprites/Flat_Frame_Wide_3.png" id="2_nvrn6"]
 [ext_resource type="Texture2D" uid="uid://cp8dp4co45fcv" path="res://ASSETS/UI Sprites/Flat_Frame2.png" id="3_7y4my"]
 [ext_resource type="PackedScene" uid="uid://upa6usuyoanh" path="res://scenes/player.tscn" id="4_ifthf"]
+[ext_resource type="PackedScene" uid="uid://dku3fqcxb73ih" path="res://scenes/clickable.tscn" id="5_jdplq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e0ve"]
 size = Vector2(30.7486, 32.5981)
@@ -77,3 +78,5 @@ shape = SubResource("RectangleShape2D_xr3gv")
 
 [node name="Player" parent="." instance=ExtResource("4_ifthf")]
 position = Vector2(361, 325)
+
+[node name="Clickable" parent="." instance=ExtResource("5_jdplq")]
