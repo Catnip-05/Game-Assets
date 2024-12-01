@@ -1,23 +1,24 @@
-extends Node2D
+extends TextureRect
 
-var selected = false
-var offset = Vector2()
 
-func _ready():
-	add_to_group("draggable")
-
-func _process(delta: float) -> void:
-	if selected:
-		followedMouse() 
-		
-func followedMouse():
-	position = get_global_mouse_position() + offset
+func _get_drag_data(at_position):
+	var preview_texture = TextureRect.new()
+	
+	preview_texture.texture = texture
+	preview_texture.expand_mode = 1
+	preview_texture.size = Vector2(30, 30)
+	
+	var preview = Control.new()
+	preview.add_child(preview_texture)
+	
+	set_drag_preview(preview)
+	texture = null
+	
+	return preview_texture.texture
 	
 	
-func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			selected = true
-			offset = position - get_global_mouse_position()
-		else:
-			selected = false
+func _can_drop_data(_pos, data):
+	return data is Texture2D
+	
+func _drop_data(_pos, data):
+	texture = data
