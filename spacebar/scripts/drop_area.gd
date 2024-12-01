@@ -1,22 +1,23 @@
-extends Area2D
+extends TextureRect
 
-signal object_dropped(object)
-signal object_left(object)
-
-func _ready() -> void:
-	connect("body_entered", self, "_on_body_entered")  
-	connect("body_exited", self, "_on_body_exited") 
-
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("draggable"):
-		print("Object entered the drop area:", body.name)
-		emit_signal("object_dropped", body)
-
-
-func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("draggable"):
-		print("Object left the drop area:", body.name)
-		emit_signal("object_left", body)
+func _get_drag_data(at_position):
+	var preview_texture = TextureRect.new()
+	
+	preview_texture.texture = texture
+	preview_texture.expand_mode = 1
+	preview_texture.size = Vector2(30, 30)
+	
+	var preview = Control.new()
+	preview.add_child(preview_texture)
+	
+	set_drag_preview(preview)
+	texture = null
+	
+	return preview_texture.texture
+	
+	
+func _can_drop_data(_pos, data):
+	return data is Texture2D
+	
+func _drop_data(_pos, data):
+	texture = data

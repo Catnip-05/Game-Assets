@@ -1,16 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk8gt7oq8wtie"]
 
+[ext_resource type="Texture2D" uid="uid://veasej0o4kc7" path="res://ASSETS/UI Sprites/Banner4.png" id="1_cxy0g"]
 [ext_resource type="Script" path="res://scripts/drop_area.gd" id="1_rbyub"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mr15"]
-size = Vector2(414, 636.5)
-
-[node name="DropArea" type="Area2D"]
+[node name="DropArea" type="TextureRect"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 89.0
+offset_top = 36.0
+offset_right = 129.0
+offset_bottom = 76.0
+texture = ExtResource("1_cxy0g")
+expand_mode = 1
 script = ExtResource("1_rbyub")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(945, 325.75)
-shape = SubResource("RectangleShape2D_4mr15")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 328.0
+offset_right = 723.0
+offset_bottom = 328.0
+scale = Vector2(3.35547, 1.99688)
+mouse_filter = 2
