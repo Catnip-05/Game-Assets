@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf6c2gywcdbyl"]
+
+[ext_resource type="Script" path="res://scenes/SlidingPuzzleTestOutput/sliding_puzzle.gd" id="1_vefqj"]
+[ext_resource type="Script" path="res://scenes/SlidingPuzzleTestOutput/button.gd" id="2_pxhpc"]
+
+[node name="MainSlidingPuzzleScene" type="Node2D"]
+
+[node name="SlidingPuzzle" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vefqj")
+
+[node name="GridContainer" type="GridContainer" parent="SlidingPuzzle"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="PuzzlePiece" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="PuzzlePiece"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_pxhpc")

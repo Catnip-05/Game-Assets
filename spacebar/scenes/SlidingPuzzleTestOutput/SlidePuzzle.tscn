@@ -1,0 +1,109 @@
+[gd_scene load_steps=19 format=3 uid="uid://ca01nj8eibf20"]
+
+[ext_resource type="Script" path="res://scenes/SlidingPuzzleTestOutput/slide_puzzle.gd" id="1_m6gns"]
+[ext_resource type="Texture2D" uid="uid://ct0ldn7sbntt" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-1-column-1.png" id="1_v1n7i"]
+[ext_resource type="Texture2D" uid="uid://d0ls75m651f30" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-1-column-2.png" id="2_kvsnf"]
+[ext_resource type="Texture2D" uid="uid://bdoyb4fbsr4x7" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-1-column-3.png" id="3_khchj"]
+[ext_resource type="Texture2D" uid="uid://dqub2wma4ejby" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-1-column-4.png" id="4_4locu"]
+[ext_resource type="Texture2D" uid="uid://quo6wxk7oovu" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-2-column-1.png" id="5_6ck52"]
+[ext_resource type="Texture2D" uid="uid://ctidnj4wkyry0" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-2-column-2.png" id="6_ncvr6"]
+[ext_resource type="Texture2D" uid="uid://cnbr7036hwxa8" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-2-column-3.png" id="7_8a4io"]
+[ext_resource type="Texture2D" uid="uid://s1md42yguw8o" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-2-column-4.png" id="8_8c1fq"]
+[ext_resource type="Texture2D" uid="uid://b778yvks8eju0" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-3-column-1.png" id="9_7av1j"]
+[ext_resource type="Texture2D" uid="uid://dfkwwi1u6bh51" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-3-column-2.png" id="10_e5r6v"]
+[ext_resource type="Texture2D" uid="uid://cnocrl2oardyn" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-3-column-3.png" id="11_7etos"]
+[ext_resource type="Texture2D" uid="uid://dd5ft1n56lvg1" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-3-column-4.png" id="13_1bkkm"]
+[ext_resource type="Texture2D" uid="uid://kl4b5tx3fba7" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-4-column-1.png" id="14_yngfj"]
+[ext_resource type="Texture2D" uid="uid://bl2qnu3ebtbpp" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-4-column-2.png" id="15_afpn7"]
+[ext_resource type="Texture2D" uid="uid://b4xe1bpvyamxk" path="res://ASSETS/UI Sprites/Split Images/PineTools.com_files/row-4-column-3.png" id="16_31k2e"]
+[ext_resource type="Texture2D" uid="uid://bl08lmetuf6c4" path="res://ASSETS/UI Sprites/Flat_Frame1.png" id="17_qfebs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmfvb"]
+size = Vector2(768, 766)
+
+[node name="SlidePuzzle" type="Area2D"]
+script = ExtResource("1_m6gns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(384, 385)
+shape = SubResource("RectangleShape2D_qmfvb")
+
+[node name="Row_1_Col_1" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(3, 2.4)
+texture = ExtResource("1_v1n7i")
+
+[node name="Row_1_Col_2" type="Sprite2D" parent="."]
+position = Vector2(288, 96)
+scale = Vector2(3, 2.4)
+texture = ExtResource("2_kvsnf")
+
+[node name="Row_1_Col_3" type="Sprite2D" parent="."]
+position = Vector2(480, 96)
+scale = Vector2(3, 2.4)
+texture = ExtResource("3_khchj")
+
+[node name="Row_1_Col_4" type="Sprite2D" parent="."]
+position = Vector2(672, 96)
+scale = Vector2(3, 2.4)
+texture = ExtResource("4_4locu")
+
+[node name="Row_2_Col_1" type="Sprite2D" parent="."]
+position = Vector2(96.0001, 288)
+scale = Vector2(3, 2.4)
+texture = ExtResource("5_6ck52")
+
+[node name="Row_2_Col_2" type="Sprite2D" parent="."]
+position = Vector2(288, 288)
+scale = Vector2(3, 2.4)
+texture = ExtResource("6_ncvr6")
+
+[node name="Row_2_Col_3" type="Sprite2D" parent="."]
+position = Vector2(480, 288)
+scale = Vector2(3, 2.4)
+texture = ExtResource("7_8a4io")
+
+[node name="Row_2_Col_4" type="Sprite2D" parent="."]
+position = Vector2(672, 288)
+scale = Vector2(3, 2.4)
+texture = ExtResource("8_8c1fq")
+
+[node name="Row_3_Col_1" type="Sprite2D" parent="."]
+position = Vector2(96.0001, 480)
+scale = Vector2(3, 2.4)
+texture = ExtResource("9_7av1j")
+
+[node name="Row_3_Col_2" type="Sprite2D" parent="."]
+position = Vector2(288, 480)
+scale = Vector2(3, 2.4)
+texture = ExtResource("10_e5r6v")
+
+[node name="Row_3_Col_3" type="Sprite2D" parent="."]
+position = Vector2(480, 480)
+scale = Vector2(3, 2.4)
+texture = ExtResource("11_7etos")
+
+[node name="Row_3_Col_4" type="Sprite2D" parent="."]
+position = Vector2(672, 480)
+scale = Vector2(3, 2.4)
+texture = ExtResource("13_1bkkm")
+
+[node name="Row_4_Col_1" type="Sprite2D" parent="."]
+position = Vector2(96.0001, 672)
+scale = Vector2(3, 2.38)
+texture = ExtResource("14_yngfj")
+
+[node name="Row_4_Col_2" type="Sprite2D" parent="."]
+position = Vector2(288, 672)
+scale = Vector2(3, 2.4)
+texture = ExtResource("15_afpn7")
+
+[node name="Row_4_Col_3" type="Sprite2D" parent="."]
+position = Vector2(480, 672)
+scale = Vector2(3, 2.38)
+texture = ExtResource("16_31k2e")
+
+[node name="Row_4_Col_4" type="Sprite2D" parent="."]
+position = Vector2(672, 672)
+scale = Vector2(2, 3)
+texture = ExtResource("17_qfebs")
