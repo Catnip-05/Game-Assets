@@ -4,21 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://b2e5lhcekdf3d" path="res://ASSETS/UI Sprites/propPanel004_on_2.png" id="2_7y7dx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24yow"]
-size = Vector2(180, 379)
+size = Vector2(152, 274.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqmo6"]
-size = Vector2(210, 395)
+size = Vector2(172, 330.5)
 
 [node name="Clickable" type="Area2D"]
 script = ExtResource("1_ujjnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(112.706, 416.25)
-scale = Vector2(3.58824, 2.75)
+position = Vector2(88.8493, 465.25)
+scale = Vector2(2.63397, 2.01866)
+texture = ExtResource("2_7y7dx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1045, 503)
+scale = Vector2(2.55364, 1.95709)
+texture = ExtResource("2_7y7dx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(590, 545)
+scale = Vector2(2.8405, 1.89645)
+texture = ExtResource("2_7y7dx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1022, 177)
+scale = Vector2(2.35889, 1.80784)
 texture = ExtResource("2_7y7dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(120.706, 419.75)
+position = Vector2(94, 465.875)
 shape = SubResource("RectangleShape2D_24yow")
 
 [node name="Label" type="Label" parent="."]
@@ -30,7 +45,28 @@ text = "This is a Puzzle"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(125, 416)
+position = Vector2(98, 458)
+shape = SubResource("RectangleShape2D_kqmo6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(476, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(98, 458)
+shape = SubResource("RectangleShape2D_kqmo6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(944, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(98, 458)
+shape = SubResource("RectangleShape2D_kqmo6")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(932, -303)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(98, 458)
 shape = SubResource("RectangleShape2D_kqmo6")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

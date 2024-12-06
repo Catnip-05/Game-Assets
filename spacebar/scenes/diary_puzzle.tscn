@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj8buu57ap5ll"]
+
+[ext_resource type="PackedScene" uid="uid://dku3fqcxb73ih" path="res://scenes/clickable.tscn" id="1_mcodn"]
+
+[node name="DiaryPuzzle" type="Node2D"]
+
+[node name="Clickable" parent="." instance=ExtResource("1_mcodn")]
