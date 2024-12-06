@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dku3fqcxb73ih"]
+[gd_scene load_steps=5 format=3 uid="uid://dku3fqcxb73ih"]
 
-[ext_resource type="Texture2D" uid="uid://bd3h2hhapv5k6" path="res://ASSETS/UI Sprites/Button Play.png" id="1_rghkf"]
 [ext_resource type="Script" path="res://scripts/clickable.gd" id="1_ujjnw"]
+[ext_resource type="Texture2D" uid="uid://b2e5lhcekdf3d" path="res://ASSETS/UI Sprites/propPanel004_on_2.png" id="2_7y7dx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24yow"]
-size = Vector2(76, 53)
+size = Vector2(180, 379)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqmo6"]
+size = Vector2(210, 395)
 
 [node name="Clickable" type="Area2D"]
 script = ExtResource("1_ujjnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(300.5, 177)
+position = Vector2(112.706, 416.25)
 scale = Vector2(3.58824, 2.75)
-texture = ExtResource("1_rghkf")
+texture = ExtResource("2_7y7dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(300, 176.5)
+position = Vector2(120.706, 419.75)
 shape = SubResource("RectangleShape2D_24yow")
 
 [node name="Label" type="Label" parent="."]
@@ -23,5 +26,11 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is a Puzzle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(125, 416)
+shape = SubResource("RectangleShape2D_kqmo6")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
